@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB4E9FE318D653F9007E6EFF /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4E9FE118D653F9007E6EFF /* MovieCell.xib */; };
+		BB4E9FE618D655D0007E6EFF /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4E9FE518D655D0007E6EFF /* MovieCell.m */; };
 		BB928ED418D647A4004F5BB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB928ED318D647A4004F5BB0 /* Foundation.framework */; };
 		BB928ED618D647A4004F5BB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB928ED518D647A4004F5BB0 /* CoreGraphics.framework */; };
 		BB928ED818D647A4004F5BB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB928ED718D647A4004F5BB0 /* UIKit.framework */; };
@@ -34,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB4E9FE118D653F9007E6EFF /* MovieCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		BB4E9FE418D655D0007E6EFF /* MovieCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
+		BB4E9FE518D655D0007E6EFF /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		BB928ED018D647A4004F5BB0 /* RottenMoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenMoviesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB928ED318D647A4004F5BB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB928ED518D647A4004F5BB0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -112,9 +117,11 @@
 		BB928ED918D647A4004F5BB0 /* RottenMoviesApp */ = {
 			isa = PBXGroup;
 			children = (
+				BB928F0918D6514A004F5BB0 /* Models */,
+				BB928F0818D65143004F5BB0 /* Views */,
+				BB928F0718D64900004F5BB0 /* View Controllers */,
 				BB928EE218D647A4004F5BB0 /* AppDelegate.h */,
 				BB928EE318D647A4004F5BB0 /* AppDelegate.m */,
-				BB928F0718D64900004F5BB0 /* View Controllers */,
 				BB928EE518D647A4004F5BB0 /* Images.xcassets */,
 				BB928EDA18D647A4004F5BB0 /* Supporting Files */,
 			);
@@ -158,6 +165,23 @@
 				BB928F0418D648FA004F5BB0 /* MoviesViewController.xib */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BB928F0818D65143004F5BB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB4E9FE118D653F9007E6EFF /* MovieCell.xib */,
+				BB4E9FE418D655D0007E6EFF /* MovieCell.h */,
+				BB4E9FE518D655D0007E6EFF /* MovieCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BB928F0918D6514A004F5BB0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,7 +228,7 @@
 		BB928EC818D647A4004F5BB0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Anthony Sherbondy";
 				TargetAttributes = {
 					BB928EEA18D647A4004F5BB0 = {
@@ -236,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB928EDE18D647A4004F5BB0 /* InfoPlist.strings in Resources */,
+				BB4E9FE318D653F9007E6EFF /* MovieCell.xib in Resources */,
 				BB928F0618D648FA004F5BB0 /* MoviesViewController.xib in Resources */,
 				BB928EE618D647A4004F5BB0 /* Images.xcassets in Resources */,
 			);
@@ -257,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB928F0518D648FA004F5BB0 /* MoviesViewController.m in Sources */,
+				BB4E9FE618D655D0007E6EFF /* MovieCell.m in Sources */,
 				BB928EE418D647A4004F5BB0 /* AppDelegate.m in Sources */,
 				BB928EE018D647A4004F5BB0 /* main.m in Sources */,
 			);
@@ -304,7 +330,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -343,7 +368,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -401,7 +425,6 @@
 		BB928F0018D647A4004F5BB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RottenMoviesApp.app/RottenMoviesApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -424,7 +447,6 @@
 		BB928F0118D647A4004F5BB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RottenMoviesApp.app/RottenMoviesApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -459,6 +481,7 @@
 				BB928EFE18D647A4004F5BB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB928EFF18D647A4004F5BB0 /* Build configuration list for PBXNativeTarget "RottenMoviesAppTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +490,7 @@
 				BB928F0118D647A4004F5BB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
