@@ -10,6 +10,8 @@
 		BB4E9FE318D653F9007E6EFF /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4E9FE118D653F9007E6EFF /* MovieCell.xib */; };
 		BB4E9FE618D655D0007E6EFF /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4E9FE518D655D0007E6EFF /* MovieCell.m */; };
 		BB4E9FE918D65840007E6EFF /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4E9FE818D65840007E6EFF /* Movie.m */; };
+		BB4E9FED18D66374007E6EFF /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB4E9FEB18D66374007E6EFF /* MovieDetailsViewController.m */; };
+		BB4E9FEE18D66374007E6EFF /* MovieDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4E9FEC18D66374007E6EFF /* MovieDetailsViewController.xib */; };
 		BB928ED418D647A4004F5BB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB928ED318D647A4004F5BB0 /* Foundation.framework */; };
 		BB928ED618D647A4004F5BB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB928ED518D647A4004F5BB0 /* CoreGraphics.framework */; };
 		BB928ED818D647A4004F5BB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB928ED718D647A4004F5BB0 /* UIKit.framework */; };
@@ -42,6 +44,9 @@
 		BB4E9FE518D655D0007E6EFF /* MovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
 		BB4E9FE718D65840007E6EFF /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		BB4E9FE818D65840007E6EFF /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		BB4E9FEA18D66374007E6EFF /* MovieDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
+		BB4E9FEB18D66374007E6EFF /* MovieDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
+		BB4E9FEC18D66374007E6EFF /* MovieDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieDetailsViewController.xib; sourceTree = "<group>"; };
 		BB928ED018D647A4004F5BB0 /* RottenMoviesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RottenMoviesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB928ED318D647A4004F5BB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB928ED518D647A4004F5BB0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -166,6 +171,9 @@
 				BB928F0218D648FA004F5BB0 /* MoviesViewController.h */,
 				BB928F0318D648FA004F5BB0 /* MoviesViewController.m */,
 				BB928F0418D648FA004F5BB0 /* MoviesViewController.xib */,
+				BB4E9FEA18D66374007E6EFF /* MovieDetailsViewController.h */,
+				BB4E9FEB18D66374007E6EFF /* MovieDetailsViewController.m */,
+				BB4E9FEC18D66374007E6EFF /* MovieDetailsViewController.xib */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -271,6 +279,7 @@
 				BB4E9FE318D653F9007E6EFF /* MovieCell.xib in Resources */,
 				BB928F0618D648FA004F5BB0 /* MoviesViewController.xib in Resources */,
 				BB928EE618D647A4004F5BB0 /* Images.xcassets in Resources */,
+				BB4E9FEE18D66374007E6EFF /* MovieDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +302,7 @@
 				BB4E9FE618D655D0007E6EFF /* MovieCell.m in Sources */,
 				BB4E9FE918D65840007E6EFF /* Movie.m in Sources */,
 				BB928EE418D647A4004F5BB0 /* AppDelegate.m in Sources */,
+				BB4E9FED18D66374007E6EFF /* MovieDetailsViewController.m in Sources */,
 				BB928EE018D647A4004F5BB0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
