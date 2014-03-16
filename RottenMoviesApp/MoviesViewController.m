@@ -7,6 +7,7 @@
 //
 
 #import "MoviesViewController.h"
+#import "Movie.h"
 
 @interface MoviesViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -41,8 +42,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    NSDictionary *movie = self.movies[indexPath.row];
-    cell.textLabel.text = movie[@"title"];
+    Movie *movie = self.movies[indexPath.row];
+    cell.textLabel.text = movie.title;
     return cell;
 }
 
@@ -58,8 +59,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        self.movies = object[@"movies"];
-        NSLog(@"%@", self.movies);
+        self.movies = [Movie moviesFromArray:object[@"movies"]];
         [self.tableView reloadData];
     }];
 }
