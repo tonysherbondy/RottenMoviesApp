@@ -38,4 +38,12 @@
     // Configure the view for the selected state
 }
 
+- (void)setMovie:(Movie *)movie
+{
+    _movie = movie;
+    
+    self.movieTitleLabel.text = movie.title;
+    self.synopsisLabel.text = movie.synopsis;
+}
+
 @end

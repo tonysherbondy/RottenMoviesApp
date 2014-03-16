@@ -8,6 +8,7 @@
 
 #import "MoviesViewController.h"
 #import "Movie.h"
+#import "MovieCell.h"
 
 @interface MoviesViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -31,6 +32,11 @@
 
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    self.tableView.rowHeight = 150; // magic number from video
+    
+    UINib *movieCellNib = [UINib nibWithNibName:@"MovieCell" bundle:nil];
+    [self.tableView registerNib:movieCellNib forCellReuseIdentifier:@"MovieCell"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,9 +47,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    Movie *movie = self.movies[indexPath.row];
-    cell.textLabel.text = movie.title;
+    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
+    cell.movie = self.movies[indexPath.row];
     return cell;
 }
 
