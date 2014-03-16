@@ -19,6 +19,8 @@
 		BB928EEF18D647A4004F5BB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB928ED718D647A4004F5BB0 /* UIKit.framework */; };
 		BB928EF718D647A4004F5BB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB928EF518D647A4004F5BB0 /* InfoPlist.strings */; };
 		BB928EF918D647A4004F5BB0 /* RottenMoviesAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB928EF818D647A4004F5BB0 /* RottenMoviesAppTests.m */; };
+		BB928F0518D648FA004F5BB0 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB928F0318D648FA004F5BB0 /* MoviesViewController.m */; };
+		BB928F0618D648FA004F5BB0 /* MoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB928F0418D648FA004F5BB0 /* MoviesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,9 @@
 		BB928EF418D647A4004F5BB0 /* RottenMoviesAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RottenMoviesAppTests-Info.plist"; sourceTree = "<group>"; };
 		BB928EF618D647A4004F5BB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BB928EF818D647A4004F5BB0 /* RottenMoviesAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RottenMoviesAppTests.m; sourceTree = "<group>"; };
+		BB928F0218D648FA004F5BB0 /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
+		BB928F0318D648FA004F5BB0 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
+		BB928F0418D648FA004F5BB0 /* MoviesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoviesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +114,7 @@
 			children = (
 				BB928EE218D647A4004F5BB0 /* AppDelegate.h */,
 				BB928EE318D647A4004F5BB0 /* AppDelegate.m */,
+				BB928F0718D64900004F5BB0 /* View Controllers */,
 				BB928EE518D647A4004F5BB0 /* Images.xcassets */,
 				BB928EDA18D647A4004F5BB0 /* Supporting Files */,
 			);
@@ -142,6 +148,16 @@
 				BB928EF518D647A4004F5BB0 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BB928F0718D64900004F5BB0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB928F0218D648FA004F5BB0 /* MoviesViewController.h */,
+				BB928F0318D648FA004F5BB0 /* MoviesViewController.m */,
+				BB928F0418D648FA004F5BB0 /* MoviesViewController.xib */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB928EDE18D647A4004F5BB0 /* InfoPlist.strings in Resources */,
+				BB928F0618D648FA004F5BB0 /* MoviesViewController.xib in Resources */,
 				BB928EE618D647A4004F5BB0 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB928F0518D648FA004F5BB0 /* MoviesViewController.m in Sources */,
 				BB928EE418D647A4004F5BB0 /* AppDelegate.m in Sources */,
 				BB928EE018D647A4004F5BB0 /* main.m in Sources */,
 			);
