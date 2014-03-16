@@ -30,6 +30,7 @@
 {
     [super viewDidLoad];
 
+    self.title = @"Movies";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
