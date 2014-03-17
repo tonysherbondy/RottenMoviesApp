@@ -7,6 +7,7 @@
 //
 
 #import "MovieCell.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface MovieCell()
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
@@ -44,6 +45,8 @@
     
     self.movieTitleLabel.text = movie.title;
     self.synopsisLabel.text = movie.synopsis;
+    [self.posterView setImageWithURL:[NSURL URLWithString:movie.posterThumbnailURL]];
+
 }
 
 @end
