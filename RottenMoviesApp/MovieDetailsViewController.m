@@ -7,6 +7,7 @@
 //
 
 #import "MovieDetailsViewController.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface MovieDetailsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
@@ -50,6 +51,7 @@
 {
     self.title = self.movie.title;
     self.synopsisLabel.text = self.movie.synopsis;
+    [self.movieImageView setImageWithURL:[NSURL URLWithString:self.movie.posterDetailURL]];
 }
 
 @end

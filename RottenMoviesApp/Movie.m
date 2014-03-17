@@ -19,7 +19,6 @@
         self.synopsis = dictionary[@"synopsis"];
         self.posterDetailURL = [dictionary valueForKeyPath:@"posters.detailed"];
         self.posterThumbnailURL = [dictionary valueForKeyPath:@"posters.profile"];
-        NSLog(@"posters: %@", dictionary[@"posters"]);
     }
     
     return self;
