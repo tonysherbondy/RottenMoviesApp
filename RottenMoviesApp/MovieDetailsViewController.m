@@ -33,6 +33,14 @@
     // We may already have the movie set so we need to hook up the UI to the movie
     [self updateDetails];
     
+    // Add the close uibarbutton
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStylePlain target:self action:@selector(doneWithDetails)];
+    
+}
+
+-(void)doneWithDetails
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
