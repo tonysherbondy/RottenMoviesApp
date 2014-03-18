@@ -13,6 +13,7 @@
 #import "MBProgressHUD.h"
 
 @interface MoviesViewController ()
+@property (weak, nonatomic) IBOutlet UIView *networkErrorView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -46,6 +47,22 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
+    
+    [self hideNetworkErrorView];
+}
+
+-(void)hideNetworkErrorView
+{
+//    CGRect frame = self.networkErrorView.frame;
+//    [UIView animateWithDuration:0.25 animations:^{
+//        self.networkErrorView.frame =  CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 0);
+//    }];
+    self.networkErrorView.alpha = 0.0;
+}
+
+-(void)showNetworkErrorView
+{
+    self.networkErrorView.alpha = 0.9;
 }
 
 -(void)refresh:(id)sender
@@ -89,10 +106,19 @@
     hud.labelText = @"Loading...";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        self.movies = [Movie moviesFromArray:object[@"movies"]];
+        if (connectionError) {
+            // Failure, lets show error
+            [self showNetworkErrorView];
+        } else {
+            // Clear any network error we may have been showing on success
+            [self hideNetworkErrorView];
+            
+            id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            self.movies = [Movie moviesFromArray:object[@"movies"]];
+            [self.tableView reloadData];
+        }
+        // Stop the loading and refresh spinners on success and failure
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [self.tableView reloadData];
         [self.refreshControl endRefreshing];
     }];
 }
