@@ -10,6 +10,7 @@
 #import "Movie.h"
 #import "MovieCell.h"
 #import "MovieDetailsViewController.h"
+#import "MBProgressHUD.h"
 
 @interface MoviesViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -84,10 +85,13 @@
 - (void) loadMovies {
     NSString *url = @"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=g9au4hv6khv6wzvzgt55gpqs";
     
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Loading...";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         self.movies = [Movie moviesFromArray:object[@"movies"]];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
     }];
