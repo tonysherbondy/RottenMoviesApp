@@ -22,18 +22,17 @@
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     
     // Customize the navigation bar
-    [[UINavigationBar appearance] setBarTintColor: [UIColor colorWithRed:55.0/255.0 green:127.0/255.0 blue:0.0/255.0 alpha:1]];
+    [[UINavigationBar appearance] setBarTintColor: GREEN];
     
-    UIColor *yellowColor = [UIColor colorWithRed:253.0/255.0 green:237.0/255.0 blue:0.0/255.0 alpha:1.0];
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, 1);
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           yellowColor, NSForegroundColorAttributeName,
+                                                           YELLOW, NSForegroundColorAttributeName,
                                                            shadow, NSShadowAttributeName,
                                                            [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
     
-    [[UINavigationBar appearance] setTintColor:yellowColor];
+    [[UINavigationBar appearance] setTintColor:YELLOW];
     
     self.window.rootViewController = navigationController;
     

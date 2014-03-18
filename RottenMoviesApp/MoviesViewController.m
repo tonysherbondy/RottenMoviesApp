@@ -77,6 +77,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
+    
+    // Customize highlight color
+    UIView *customHighlightColor = [[UIView alloc] init];
+    customHighlightColor.backgroundColor = GREEN_HIGHLIGHT;
+    cell.selectedBackgroundView =  customHighlightColor;
+    
     cell.movie = self.movies[indexPath.row];
     return cell;
 }
