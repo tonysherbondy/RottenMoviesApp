@@ -14,6 +14,7 @@
 @interface MoviesViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
 
 @implementation MoviesViewController
@@ -39,6 +40,16 @@
     
     UINib *movieCellNib = [UINib nibWithNibName:@"MovieCell" bundle:nil];
     [self.tableView registerNib:movieCellNib forCellReuseIdentifier:@"MovieCell"];
+    
+    // Add the refresh control
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+}
+
+-(void)refresh:(id)sender
+{
+    [self loadMovies];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,7 +89,10 @@
         id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         self.movies = [Movie moviesFromArray:object[@"movies"]];
         [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
     }];
 }
+
+
 
 @end
