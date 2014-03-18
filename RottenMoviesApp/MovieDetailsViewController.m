@@ -51,6 +51,7 @@
 {
     self.title = self.movie.title;
     self.synopsisLabel.text = self.movie.synopsis;
+    self.castLabel.text = [self.movie.cast componentsJoinedByString:@", "];
     [self.movieImageView setImageWithURL:[NSURL URLWithString:self.movie.posterDetailURL]];
 }
 

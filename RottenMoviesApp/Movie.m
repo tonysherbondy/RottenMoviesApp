@@ -19,6 +19,11 @@
         self.synopsis = dictionary[@"synopsis"];
         self.posterDetailURL = [dictionary valueForKeyPath:@"posters.detailed"];
         self.posterThumbnailURL = [dictionary valueForKeyPath:@"posters.profile"];
+        NSMutableArray *cast = [[NSMutableArray alloc] init];
+        for (NSDictionary *actor in dictionary[@"abridged_cast"]) {
+            [cast addObject:actor[@"name"]];
+        }
+        self.cast = cast;
     }
     
     return self;

@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *synopsis;
 @property (nonatomic, strong) NSString *posterThumbnailURL;
 @property (nonatomic, strong) NSString *posterDetailURL;
+@property (nonatomic, strong) NSArray *cast;
 
 - (id) initWithDictionary:(NSDictionary *)dictionary;
 + (NSArray *)moviesFromArray:(NSArray *)array;

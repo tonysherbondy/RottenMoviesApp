@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UILabel *movieTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
+@property (weak, nonatomic) IBOutlet UILabel *castLabel;
 
 @end
 
@@ -45,6 +46,7 @@
     
     self.movieTitleLabel.text = movie.title;
     self.synopsisLabel.text = movie.synopsis;
+    self.castLabel.text = [movie.cast componentsJoinedByString:@", "];
     [self.posterView setImageWithURL:[NSURL URLWithString:movie.posterThumbnailURL]];
 
 }
