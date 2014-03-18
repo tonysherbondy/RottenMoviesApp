@@ -53,10 +53,6 @@
 
 -(void)hideNetworkErrorView
 {
-//    CGRect frame = self.networkErrorView.frame;
-//    [UIView animateWithDuration:0.25 animations:^{
-//        self.networkErrorView.frame =  CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, 0);
-//    }];
     self.networkErrorView.alpha = 0.0;
 }
 
